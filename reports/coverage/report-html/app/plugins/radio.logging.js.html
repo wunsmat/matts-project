@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/plugins/radio.logging.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">app/plugins/</a> radio.logging.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.78% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.86% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/35</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint strict: 0 */
+/* eslint no-console: 0 */
+/**
+ * @file Logging module that leverages Backbone.Radio
+ * @module plugins/logging
+ * @example &lt;caption&gt;Extend application object&lt;/caption&gt;
+ * var logging = require('./plugins/radio.logging');
+ * var App = new Marionette.Application();
+ * _.extend(App, logging);
+ * module.exports = App;
+ * @example &lt;caption&gt;Use console message methods with custom stylized output&lt;/caption&gt;
+ * var App = require('app');
+ * App.log('hello world');
+ * App.info('hello world');
+ * App.warn('hello world');
+ * App.error('hello world');
+ * @example &lt;caption&gt;Leverage Backbone.Radio to "tune" in and out on channels&lt;/caption&gt;
+ * var App = require('app');
+ * setInterval(function() {
+ *    App.radio.channel('test').trigger('log', 'message');
+ * }, 1000);
+ * App.radio.level('log');   //set logging level
+ * App.radio.tuneIn('test'); //no need to create the channel first
+ * // See some beautiful log messages in the console
+ * App.radio.tuneOut('test'); //messages on test channel will no longer be shown
+ * //Note: Remove 'test' channel with App.radio.reset('test')
+ * @example &lt;caption&gt;Choose what level gets shown&lt;/caption&gt;
+ * var App = require('app');
+ * App.radio.level('log'); //show all logs
+ * App.radio.tuneIn('test'); //no need to create the channel first
+ * setInterval(function() {
+ *    App.radio.channel('test').trigger('log', 'message');
+ *    App.radio.channel('test').trigger('info', 'message');
+ *    App.radio.channel('test').trigger('warn', 'message');
+ *    App.radio.channel('test').trigger('error', 'message');
+ * }, 1000);
+ * App.radio.level('none');  //show no logs
+ * App.radio.level('error'); //only show 'error' logs
+ * App.radio.level('warn');  //show 'error' and 'warn' logs
+ * //Note: Unless directly set with level(), the default behavior is to show no logs
+ * //Note: Return current logging level with App.radio.level()
+ * //Note: Return channels with App.radio.channels()
+**/
+<span class="cstat-no" title="statement not covered" >define(<span class="fstat-no" title="function not covered" >function(require, exports) {</span></span>
+    'use strict';
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var _     = require('underscore');</span>
+<span class="cstat-no" title="statement not covered" >    var Radio = require('backbone.radio');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    Radio.DEBUG = false; </span>//Show &amp; Hide Backbone.Radio debug messages
+<span class="cstat-no" title="statement not covered" >    var APP_LOGGING = true; </span> //Show &amp; Hide Application console messages
+<span class="cstat-no" title="statement not covered" >    var MSG_PREFIX  = '%c APP ❱❱ %c';</span>
+<span class="cstat-no" title="statement not covered" >    var MSG_TYPES   = ['error', 'warn', 'info', 'log', 'trace'];</span>
+<span class="cstat-no" title="statement not covered" >    var zipObject   = _.isFunction(_.zipObject) ? _.zipObject : _.object;</span>
+<span class="cstat-no" title="statement not covered" >    var MSG_DICT    = zipObject(MSG_TYPES, MSG_TYPES.map(<span class="fstat-no" title="function not covered" >function(type, i) {<span class="cstat-no" title="statement not covered" ></span>return i;}</span>));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var STYLE = {</span>
+        none:  'background:inherit;color:inherit;',
+        error: 'background:red;color:white;',
+        warn:  'background:yellow;color:black;',
+        info:  'background:blue;color:white;',
+        log:   'background:#333;color:white;'
+    };
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function consoleMessage(type) {</span>
+<span class="cstat-no" title="statement not covered" >        return Function.prototype.bind.call(console[type], console, MSG_PREFIX, STYLE[type], STYLE.none);</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var channelMethods = Object.create(null);</span>
+<span class="cstat-no" title="statement not covered" >    channelMethods.getChannels = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >        return Object.keys(Radio._channels);</span>
+    };
+<span class="cstat-no" title="statement not covered" >    channelMethods.level = <span class="fstat-no" title="function not covered" >function(value) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (!_.isUndefined(value)) {</span>
+<span class="cstat-no" title="statement not covered" >            var level;</span>
+<span class="cstat-no" title="statement not covered" >            if (_.isNumber(value) &amp;&amp; value &lt; MSG_TYPES.length) {</span>
+<span class="cstat-no" title="statement not covered" >                level = value;</span>
+            } else <span class="cstat-no" title="statement not covered" >if (_.isString(value)) {</span>
+<span class="cstat-no" title="statement not covered" >                if (_.contains(MSG_TYPES, value)) {</span>
+<span class="cstat-no" title="statement not covered" >                    level = MSG_DICT[value] + 1;</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    level = 0;</span>
+                }
+            }
+<span class="cstat-no" title="statement not covered" >            channelMethods._level = level;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return channelMethods._level;</span>
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    Radio.log = <span class="fstat-no" title="function not covered" >function(channelName, type) {</span></span>
+<span class="cstat-no" title="statement not covered" >        type = _.contains(MSG_TYPES, type) ? type : 'log';</span>
+<span class="cstat-no" title="statement not covered" >        var level = MSG_DICT[type];</span>
+<span class="cstat-no" title="statement not covered" >        var msg = arguments.length &gt; 2 ? arguments[2] : arguments[1];</span>
+<span class="cstat-no" title="statement not covered" >        if (level &lt; channelMethods.level()) {</span>
+<span class="cstat-no" title="statement not covered" >            consoleMessage(type)('[' + channelName + '] ', msg, _.now());</span>
+        }
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    exports.radio = _.extend(Radio, channelMethods);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    MSG_TYPES.forEach(<span class="fstat-no" title="function not covered" >function(type) {</span></span>
+<span class="cstat-no" title="statement not covered" >        exports[type] = APP_LOGGING ? consoleMessage(type) : <span class="fstat-no" title="function not covered" >function() {</span>};</span>
+    });
+});
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Apr 21 2017 05:43:41 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
