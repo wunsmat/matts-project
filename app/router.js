@@ -7,7 +7,7 @@ define(function(require, exports) {
     'use strict';
 
     var Marionette = require('backbone.marionette');
-    var View = require('views/example');
+    var TodoView   = require('views/todoView');
 
     /**
      * @name RouterController
@@ -16,14 +16,13 @@ define(function(require, exports) {
      * @prop {function} foo Example callback function to be called by ExampleAppRouter
     **/
     var RouterController = Marionette.Object.extend({
-        initialiizae: function() {
-            var view = new View();
-            view.render();
-            this.options.view = view;
+        initialize: function(options) {
+            this.view = options.view;
         },
-        fun: function() {
-            //code to be executed for 'foo' route
-            
+        showTodoView: function() {
+            console.log('flag');
+            this.view.getRegion('main').show(new TodoView());
+            Backbone.history.navigate('todoView');
         }
     });
     /**
@@ -36,9 +35,11 @@ define(function(require, exports) {
     **/
     var ExampleAppRouter = Marionette.AppRouter.extend({
         appRoutes: {
-            'fun': 'fun'
+            'todoView': 'showTodoView'
         },
-        controller: new RouterController()
+        initialiizae: function(options) {
+            this.controller = options.controller;
+        }
     });
 
     exports.Controller = RouterController;

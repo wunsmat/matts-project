@@ -8,8 +8,11 @@ define(function(require, exports, module) {
     'use strict';
 
     var Marionette = require('backbone.marionette');
+    var Backbone   = require('backbone');
+    var TodoView   = require('views/todoView');
     var JST        = require('templates');
     var Example    = require('models/example');
+    var Router     = require('router');
 
     /**
      * @name ExampleView
@@ -20,7 +23,23 @@ define(function(require, exports, module) {
     var ExampleView = Marionette.View.extend({
         //view code goes here
         template: JST.example,
-        model: new Example.Model()
+        model: new Example.Model(),  
+        ui: {
+            todo: '#todo',
+        },
+        events: {
+            'click @ui.todo': 'showTodoView'
+        },
+        regions: {
+            main: '#main'
+        },
+        initialize: function() {
+            var controller = new Router.Controller({view: this});
+            this.router = new Router.Router({controller: controller});
+        },
+        showTodoView: function() {
+            this.getRegion('main').show(new TodoView());
+        }
     });
 
     module.exports = ExampleView;

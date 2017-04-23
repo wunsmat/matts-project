@@ -15,12 +15,15 @@ define(function(require) {
 
     WebApp.on('before:start', function() {
         console.info(WebApp.model.get('name') + ' is starting...');
-        WebApp.router = new Example.Router();
+        // WebApp.router = new Example.Router();
     });
     WebApp.on('start', function() {
         Backbone.history.start();
         console.info(WebApp.model.get('name') + ' is started!');
-        WebApp.getRegion().show(new View());
+        var mainView = new View();
+        // var controller = new Example.Controller({view: mainView});
+        // this.router = new Example.Router({controller: controller});
+        WebApp.getRegion().show(mainView);
     });
     if (typeof (define) === 'undefined') {
         //Not AMD ==> Bundled with Browserify

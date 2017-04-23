@@ -12,6 +12,12 @@
 @darkpurp: #661141;
 @darkestpurp: #440026;
 
+h1 {
+    color: @green;
+    font-size: 2em;
+    line-height: 2em;
+}
+
 body {
     background-color: @purp;
     background-position: 50% -50%;
@@ -35,7 +41,6 @@ section {
     color: @darkestpurp;
     background-color: @lightpurp;
     line-height: 3em;
-    padding: 0 2em;
     margin: 2em 0;
     text-align: center;
     transform: scale(1.0);
@@ -65,17 +70,25 @@ section: Base CSS
 */
 a,
 a:visited {
+    border-radius: 5px;
+    background-color: @darkestpurp;
     color: @lightpurp;
     padding: 5px;
     text-decoration: none;
     text-transform: uppercase;
 }
 a:hover {
-    background-color: @darkestpurp;
+    background-color: @green;
     color: @lightpurp;
-    border-radius: 5px;
 }
 
+li {
+    cursor: pointer;
+}
+li:hover {
+    background-color: @green;
+    color: @lightpurp;
+}
 
 /*---
 title:   Buttons
