@@ -18,6 +18,14 @@ h1 {
     line-height: 2em;
 }
 
+.icon {
+  display: inline-block;
+  font-size: 1.5em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
 body {
     background-color: @purp;
     background-position: 50% -50%;
@@ -125,3 +133,32 @@ nav {
     margin: 10px;
     user-select: none;
 }
+
+.todo-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cross-out {
+    text-decoration: line-through;
+}
+
+.pencil:before {
+    content: '\e905';
+    font-family: 'icomoon';
+}
+
+.bin:before {
+    content: '\e9ac';
+    font-family: 'icomoon';
+}
+
+.checked:before {
+    content: '\ea10';
+    font-family: 'icomoon';
+}
+
+.unchecked:before {
+    content: '\ea11';
+    font-family: 'icomoon';
+} 

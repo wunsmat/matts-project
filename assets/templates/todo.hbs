@@ -1,1 +1,13 @@
-<span id={{id}}>{{text}}</span>
+<span class='todo-container' id={{id}}>
+    {{#if checked}}
+        <span class="todo-check checked icon"></span>
+        <span class='todo-text cross-out'>{{text}}</span>
+    {{else}}
+        <span class="todo-check unchecked icon"></span>
+        <span class='todo-text'>{{text}}</span>
+    {{/if}}
+    <span id='todo-icons'>
+        <span class="pencil icon"></span>
+        <span class="bin icon"></span>
+    </span>
+</span>

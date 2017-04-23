@@ -10,14 +10,26 @@ this["JST"]["example"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":f
     + "</a> was made with <span style=\"color: red;font-weight: bold;\">❤</span> using <a href=\"https://github.com/omahajs/generator-omaha\">OMAHA JS</a>\n</footer>";
 },"useData":true});
 
-this["JST"]["todo"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+this["JST"]["todo"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
+    var helper;
 
-  return "<span id="
-    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-    + ">"
-    + alias4(((helper = (helper = helpers.text || (depth0 != null ? depth0.text : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"text","hash":{},"data":data}) : helper)))
-    + "</span>";
+  return "        <span class=\"todo-check checked icon\"></span>\n        <span class='todo-text cross-out'>"
+    + container.escapeExpression(((helper = (helper = helpers.text || (depth0 != null ? depth0.text : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"text","hash":{},"data":data}) : helper)))
+    + "</span>\n";
+},"3":function(container,depth0,helpers,partials,data) {
+    var helper;
+
+  return "        <span class=\"todo-check unchecked icon\"></span>\n        <span class='todo-text'>"
+    + container.escapeExpression(((helper = (helper = helpers.text || (depth0 != null ? depth0.text : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"text","hash":{},"data":data}) : helper)))
+    + "</span>\n";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : {};
+
+  return "<span class='todo-container' id="
+    + container.escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + ">\n"
+    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.checked : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(3, data, 0),"data":data})) != null ? stack1 : "")
+    + "    <span id='todo-icons'>\n        <span class=\"pencil icon\"></span>\n        <span class=\"bin icon\"></span>\n    </span>\n</span>";
 },"useData":true});
 
 this["JST"]["todoList"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
