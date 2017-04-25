@@ -45,6 +45,10 @@ section: Base CSS
 Styles for elements such as `<section>` could go in this section.
 
 */
+#main {
+    width: 80%;
+    padding: 0 1em;
+}
 section {
     color: @darkestpurp;
     background-color: @lightpurp;
@@ -93,10 +97,6 @@ a:hover {
 li {
     cursor: pointer;
 }
-li:hover {
-    background-color: @green;
-    color: @lightpurp;
-}
 
 /*---
 title:   Buttons
@@ -136,7 +136,9 @@ nav {
 
 .todo-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    font-size: 1.5em;
+    align-items: center;
 }
 
 .cross-out {
@@ -161,4 +163,13 @@ nav {
 .unchecked:before {
     content: '\ea11';
     font-family: 'icomoon';
+}
+
+.plus:before {
+    content: '\ea0a';
+    font-family: 'icomoon';
 } 
+
+#todo-icons .icon:hover, .todo-check:hover {
+    color: @green;
+}

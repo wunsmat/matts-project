@@ -33,7 +33,7 @@ this["JST"]["todo"] = Handlebars.template({"1":function(container,depth0,helpers
 },"useData":true});
 
 this["JST"]["todoList"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<h1>To Do List</h1>\n<ul id='todo-list'></ul>";
+    return "<h1>To Do List</h1>\n<div>\n    <input id='todo-input' type='text'></input>\n    <span class=\"plus icon\"></span>\n</div>\n<ul id='todo-list'></ul>";
 },"useData":true});
 
 return this["JST"];

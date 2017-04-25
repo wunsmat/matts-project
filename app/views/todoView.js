@@ -75,6 +75,13 @@ define(function(require, exports, module) {
         //view code goes here
         tagName: 'section',
         template: JST.todoList,
+        ui: {
+            plus: '.plus',
+            todoInput: '#todo-input'
+        },
+        events: {
+            'click @ui.plus': 'addTodo'
+        },
         regions: {
             ul: {
                 el: 'ul',
@@ -82,15 +89,23 @@ define(function(require, exports, module) {
             }
         },
         initialize: function() {
-            console.log('flag');
-        },
-        onRender() {
-            const list = new Backbone.Collection([
+            this.collection = new Backbone.Collection([
                 {id: 1, text: 'Laundry', checked: true},
                 {id: 2, text: 'Wash Car',  checked: false}
             ]);
+        },
+        addTodo: function() {
+            console.log('Adding todo');
+            this.collection.add({
+                id: this.collection.length,
+                text: this.ui.todoInput,
+                checked: false
+            });
+            this.render();
+        },
+        onRender() {
             this.showChildView('ul', new TodoCollectionView({
-                collection: list
+                collection: this.collection
             }));
         }
     });
